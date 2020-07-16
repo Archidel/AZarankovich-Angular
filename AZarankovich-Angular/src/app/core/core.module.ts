@@ -5,11 +5,12 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { SectionComponent } from './section/section.component';
 import { CoursesComponent } from './courses/courses.component';
 import { FooterComponent } from './footer/footer.component';
+import { CourseItemComponent } from './courses/course-item/course-item.component';
 
 
 
 @NgModule({
-  declarations: [HeaderComponent, BreadcrumbComponent, SectionComponent, CoursesComponent, FooterComponent],
+  declarations: [HeaderComponent, BreadcrumbComponent, SectionComponent, CoursesComponent, FooterComponent, CourseItemComponent],
   exports: [
     HeaderComponent,
     BreadcrumbComponent,
