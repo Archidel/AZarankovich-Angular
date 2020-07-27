@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Course} from "../../Entity/Course";
+import {Course} from "../../entity/Course";
+import {ICourse} from "../../interfaces/ICourse";
 
 @Component({
   selector: 'app-courses',
@@ -14,12 +15,30 @@ export class CoursesComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
+  //temp data for representation
+  public ngOnInit(): void {
+    let tempDescrp = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.';
+
     this.courses = [
-      {id: 0, title: 'Video Course 1. Name tag', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.', creationDate: new Date(), duration: 45},
-      {id: 1, title: 'Video Course 2. Name tag', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.', creationDate: null, duration: 15},
-      {id: 2, title: 'Video Course 3. Name tag', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.', creationDate: null, duration: 30},
+      new Course(0, 'Video Course 1. Name tag', tempDescrp, 5, new Date()),
+      new Course(1, 'Video Course 2. Name tag', tempDescrp, 10, new Date()),
+      new Course(2, 'Video Course 3. Name tag', tempDescrp, 15, new Date()),
+      new Course(3, 'Video Course 4. Name tag', tempDescrp, 20, new Date()),
+      new Course(4, 'Video Course 5. Name tag', tempDescrp, 25, new Date()),
+      new Course(5, 'Video Course 6. Name tag', tempDescrp, 35, new Date()),
+      new Course(6, 'Video Course 7. Name tag', tempDescrp, 40, new Date()),
+      new Course(7, 'Video Course 8. Name tag', tempDescrp, 45, new Date()),
+      new Course(8, 'Video Course 9. Name tag', tempDescrp, 50, new Date()),
+      new Course(9, 'Video Course 10. Name tag', tempDescrp, 55, new Date()),
     ];
+  }
+
+  public onDelete(id: Number): void {
+    this.courses = this.courses.filter((course: ICourse) => course.id !== id);
+  }
+
+  public onLoadMoreClick(): void {
+    console.log("load more click")
   }
 
 }

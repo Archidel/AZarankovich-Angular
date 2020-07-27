@@ -7,6 +7,8 @@
         "statements"
       ]
     },
+    "member-access": true,
+    "component-selector": false,
     "array-type": false,
     "arrow-return-shorthand": true,
     "curly": true,
@@ -21,12 +23,6 @@
       "attribute",
       "app",
       "camelCase"
-    ],
-    "component-selector": [
-      true,
-      "element",
-      "app",
-      "kebab-case"
     ],
     "eofline": true,
     "import-blacklist": [
