@@ -1,4 +1,4 @@
-import {ICourse} from "../interfaces/ICourse";
+import {ICourse} from '../interfaces/ICourse';
 
 export class Course implements ICourse {
   constructor(

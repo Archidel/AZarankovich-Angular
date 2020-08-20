@@ -22,4 +22,10 @@ describe('SectionComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should log message', () => {
+    const spy = spyOn(console, 'log');
+    component.searchHandler();
+    expect(spy).toHaveBeenCalled();
+  });
 });

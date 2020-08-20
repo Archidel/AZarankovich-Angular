@@ -22,4 +22,11 @@ describe('CoursesComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('show more button should log message', () => {
+    const spy = spyOn(component, 'onLoadMoreClick');
+    component.onLoadMoreClick();
+    expect(spy).toHaveBeenCalled();
+  });
+
 });

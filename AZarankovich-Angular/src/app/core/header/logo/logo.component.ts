@@ -6,11 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./logo.component.sass']
 })
 export class LogoComponent implements OnInit {
-  logoPath:string = "assets/logo/angular.png";
+  public logoPath = 'assets/logo/angular.png';
 
   constructor() { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
 }

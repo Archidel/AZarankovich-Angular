@@ -22,4 +22,10 @@ describe('LogoComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should set image logo path as expected', () => {
+    const ele = fixture.debugElement.nativeElement.querySelectorAll('img#logo');
+    expect(ele[0].src).toContain(component.logoPath);
+  });
+
 });

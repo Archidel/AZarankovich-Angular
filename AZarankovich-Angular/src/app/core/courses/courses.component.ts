@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Course} from "../../entity/Course";
-import {ICourse} from "../../interfaces/ICourse";
+import {Course} from '../../entity/Course';
+import {ICourse} from '../../interfaces/ICourse';
 
 @Component({
   selector: 'app-courses',
@@ -15,9 +15,9 @@ export class CoursesComponent implements OnInit {
 
   }
 
-  //temp data for representation
+  // temp data for representation
   public ngOnInit(): void {
-    let tempDescrp = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.';
+    const tempDescrp = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.';
 
     this.courses = [
       new Course(0, 'Video Course 1. Name tag', tempDescrp, 5, new Date()),
@@ -33,12 +33,12 @@ export class CoursesComponent implements OnInit {
     ];
   }
 
-  public onDelete(id: Number): void {
+  public onDelete(id: number): void {
     this.courses = this.courses.filter((course: ICourse) => course.id !== id);
   }
 
   public onLoadMoreClick(): void {
-    console.log("load more click")
+    console.log('load more click');
   }
 
 }
