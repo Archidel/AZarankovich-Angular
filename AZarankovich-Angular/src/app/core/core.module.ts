@@ -8,12 +8,16 @@ import { FooterComponent } from './footer/footer.component';
 import { CourseItemComponent } from './courses/course-item/course-item.component';
 import { LogoComponent } from './header/logo/logo.component';
 import {FormsModule} from '@angular/forms';
+import {ShadowDirective} from './directive/shadow.directive';
+import {DurationPipe} from './pipe/duration.pipe';
+import {SortByDatePipe} from './pipe/sortByDate.pipe';
+import {SearchPipe} from './pipe/search.pipe';
 
 
 
 @NgModule({
   // tslint:disable-next-line:max-line-length
-  declarations: [HeaderComponent, BreadcrumbComponent, SectionComponent, CoursesComponent, FooterComponent, CourseItemComponent, LogoComponent],
+  declarations: [HeaderComponent, BreadcrumbComponent, SectionComponent, CoursesComponent, FooterComponent, CourseItemComponent, LogoComponent, ShadowDirective, DurationPipe, SortByDatePipe, SearchPipe],
   exports: [
     HeaderComponent,
     BreadcrumbComponent,

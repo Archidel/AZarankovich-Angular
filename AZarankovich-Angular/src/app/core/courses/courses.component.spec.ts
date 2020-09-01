@@ -29,4 +29,11 @@ describe('CoursesComponent', () => {
     expect(spy).toHaveBeenCalled();
   });
 
+  it('should delete element', () => {
+    const before = component.courses.length;
+    component.onDelete(component.courses[0].id);
+    const after = component.courses.length;
+    expect(after).toEqual(before - 1 );
+  });
+
 });

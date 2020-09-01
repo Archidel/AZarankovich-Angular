@@ -1,12 +1,18 @@
-<div>
-  <h1>{{course.title}}</h1>
+<div appShadow [course]="course"[ngClass]="{topRatedBackGround:course.topRated}">
+  <div>
+    <h1>{{course.title | uppercase}} <span *ngIf="course.topRated" class="topRatedStar">☆</span></h1>
+  </div>
 
   <div>
-    {{course.creationDate | date:'shortDate'}}
-    {{course.duration}} min
+    {{course.creationDate | date:'mediumDate'}}
+    {{course.duration | durationPipe}}
   </div>
 
   <p>{{course.description}}</p>
-  <button >Edit</button>
+  <button>Edit</button>
   <button (click)="delete()">Delete</button>
 </div>
+
+<style>
+  .topRatedBackGround{background-color: gold; opacity: 90%}
+</style>
