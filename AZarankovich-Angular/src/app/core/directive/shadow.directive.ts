@@ -13,7 +13,7 @@ export class ShadowDirective implements OnInit {
     const currentDate = new Date();
 
     if (creationDate < currentDate && creationDate.getDate() >= (currentDate.getDate() + 14)) {
-      this.elem.nativeElement.style.border = '2px solid green';
+      this.elem.nativeElement.style.border = 'm-1 border-primary';
     }
 
     if (creationDate > currentDate) {

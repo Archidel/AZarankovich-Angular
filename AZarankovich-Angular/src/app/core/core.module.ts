@@ -7,17 +7,23 @@ import { CoursesComponent } from './courses/courses.component';
 import { FooterComponent } from './footer/footer.component';
 import { CourseItemComponent } from './courses/course-item/course-item.component';
 import { LogoComponent } from './header/logo/logo.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ShadowDirective} from './directive/shadow.directive';
 import {DurationPipe} from './pipe/duration.pipe';
 import {SortByDatePipe} from './pipe/sortByDate.pipe';
 import {SearchPipe} from './pipe/search.pipe';
-
+import { ConfirmationDialogComponent } from './common/confirmation-dialog/confirmation-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
+import { LoginComponent } from './login/login.component';
+import {AppRoutingModule} from '../app-routing.module';
+import {NgbAlertModule, NgbButtonsModule} from "@ng-bootstrap/ng-bootstrap";
+import {MatRadioModule} from "@angular/material/radio";
 
 
 @NgModule({
   // tslint:disable-next-line:max-line-length
-  declarations: [HeaderComponent, BreadcrumbComponent, SectionComponent, CoursesComponent, FooterComponent, CourseItemComponent, LogoComponent, ShadowDirective, DurationPipe, SortByDatePipe, SearchPipe],
+  declarations: [HeaderComponent, BreadcrumbComponent, SectionComponent, CoursesComponent, FooterComponent, CourseItemComponent, LogoComponent, ShadowDirective, DurationPipe, SortByDatePipe, SearchPipe, ConfirmationDialogComponent, LoginComponent],
   exports: [
     HeaderComponent,
     BreadcrumbComponent,
@@ -27,7 +33,14 @@ import {SearchPipe} from './pipe/search.pipe';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
+    MatButtonModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    NgbButtonsModule,
+    NgbAlertModule,
+    MatRadioModule,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

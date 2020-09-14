@@ -1,4 +1,4 @@
-<div appShadow [course]="course"[ngClass]="{topRatedBackGround:course.topRated}">
+<div class="m-2" appShadow [course]="course"[ngClass]="{topRatedBackGround:course.topRated}">
   <div>
     <h1>{{course.title | uppercase}} <span *ngIf="course.topRated" class="topRatedStar">☆</span></h1>
   </div>
@@ -9,8 +9,8 @@
   </div>
 
   <p>{{course.description}}</p>
-  <button>Edit</button>
-  <button (click)="delete()">Delete</button>
+  <button class="btn btn-light border-dark">Edit</button>
+  <button class="btn btn-light border-dark"(click)="delete()">Delete</button>
 </div>
 
 <style>

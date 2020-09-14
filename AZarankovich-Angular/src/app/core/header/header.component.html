@@ -1,5 +1,20 @@
-<div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
   <app-logo></app-logo>
-  <b>User login</b>
-  <button>Log off</button>
-</div>
+
+  <a class="navbar-brand" routerLink="/">Courses</a>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/" >Home <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+
+    <div class="form-inline my-2 my-lg-0">
+      <button class="form-control mr-sm-2" *ngIf="!authorizationService.isAuthenticated()" routerLink="/login">Log in</button>
+      <button class="form-control mr-sm-2" *ngIf="authorizationService.isAuthenticated()" (click)="authorizationService.logout()" routerLink="/"> Log off</button>
+    </div>
+
+  </div>
+</nav>
